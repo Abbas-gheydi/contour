@@ -50,7 +50,8 @@ func FileAccessLogEnvoy(path string, format string, extensions []string, level c
 						},
 					},
 				},
-				Formatters: extensionConfig(extensions),
+				OmitEmptyValues: true,
+				Formatters:      extensionConfig(extensions),
 			},
 		}
 	}
@@ -99,7 +100,8 @@ func FileAccessLogJSON(path string, fields contour_api_v1alpha1.AccessLogJSONFie
 						Format: &envoy_config_core_v3.SubstitutionFormatString_JsonFormat{
 							JsonFormat: jsonformat,
 						},
-						Formatters: extensionConfig(extensions),
+						OmitEmptyValues: true,
+						Formatters:      extensionConfig(extensions),
 					},
 				},
 			}),

@@ -76,6 +76,10 @@ Note that the `DYNAMIC_METADATA` and `FILTER_STATE` Envoy logging operators are 
 
 See the [example config file][6] to see this used in context.
 
+#### Omitting Logs with Empty Values
+
+Contour now includes a feature that, by default, omits empty fields in Envoy logs for the access log. This enhancement improves log clarity by excluding entries with empty values, providing a more concise and relevant log output. Please note that this behavior is set by default and is not configurable, ensuring a streamlined experience for all users.
+
 #### Sample Configuration File
 
 Here is a sample config:
